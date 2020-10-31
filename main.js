@@ -26,12 +26,12 @@ function onClientReady()
     client.on('message', message =>{
         if(!message.content.startsWith(config.prefix) || message.author.bot) return;
     
-        const args = message.content.slice(prefix.length).split(/ +/);
+        const args = message.content.slice(config.prefix.length).split(/ +/);
         const command = args.shift().toLowerCase();
     
         if(command == 'rain'){
             pupeteerScreenie();
-            message.channel.send("Rain Radar", {files: ["./output/radar1.png", "./output/radar.png"]});
+            message.channel.send("Rain Radar", {files: ["./finished/neuquant.gif"]});
         }
     })
     //pupeteerScreenie();
@@ -54,15 +54,23 @@ function pupeteerScreenie()
         await page.waitFor(2000);
         console.log('waitfordone');
        // fs.unlinkSync('./output/radar.png');
-        await page.screenshot({path: './output/radar.png'});
+        await page.screenshot({path: './output/radar5.png'});
         console.log('Screenshot 1 taken');
         
         await page.click('button.btn.btn-default.btn-back');
-        await page.screenshot({path: './output/radar1.png'});
-       console.log('Screenshot 2 taken');
+        await page.screenshot({path: './output/radar4.png'});
+
+        await page.click('button.btn.btn-default.btn-back');
+        await page.screenshot({path: './output/radar3.png'});
+
+        await page.click('button.btn.btn-default.btn-back');
+        await page.screenshot({path: './output/radar2.png'});
+
+        await page.click('button.btn.btn-default.btn-back');
+        await page.screenshot({path: './output/radar.png'});
+       console.log('All Screenshots taken');
         await browser.close();
         createGif('neuquant');
-        console.log('End of SS func');
       })(); 
 }
 
