@@ -1,0 +1,20 @@
+{
+  "name": "weather",
+  "version": "1.0.0",
+  "description": "Screenshot of Rain Radar",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Givi",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.4.1",
+    "gif-encoder-2": "^1.0.5",
+    "gifencoder": "^2.0.1",
+    "gm": "^1.23.1",
+    "puppeteer": "^5.4.1",
+    "spooky": "^0.2.5",
+    "webshot": "^0.18.0"
+  }
+}
